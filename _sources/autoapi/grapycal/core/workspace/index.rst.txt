@@ -1,0 +1,71 @@
+:py:mod:`grapycal.core.workspace`
+=================================
+
+.. py:module:: grapycal.core.workspace
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.core.workspace.Workspace
+
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.core.workspace.logger
+   grapycal.core.workspace.parser
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: Workspace(port, host, path)
+
+
+   .. py:method:: _communication_thread(event_loop_set_event: threading.Event)
+
+
+   .. py:method:: _async_communication_thread(event_loop_set_event: threading.Event)
+      :async:
+
+
+   .. py:method:: run() -> None
+
+
+   .. py:method:: exit()
+
+
+   .. py:method:: get_communication_event_loop() -> asyncio.AbstractEventLoop
+
+
+   .. py:method:: initialize_workspace() -> None
+
+
+   .. py:method:: save_workspace(path: str) -> None
+
+
+   .. py:method:: load_workspace(path: str) -> None
+
+
+   .. py:method:: get_workspace_object() -> grapycal.sobjects.workspaceObject.WorkspaceObject
+
+
+   .. py:method:: vars() -> Dict[str, Any]
+
+
+
+.. py:data:: parser
+
+   
+

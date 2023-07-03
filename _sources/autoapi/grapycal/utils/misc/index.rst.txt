@@ -1,0 +1,34 @@
+:py:mod:`grapycal.utils.misc`
+=============================
+
+.. py:module:: grapycal.utils.misc
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.utils.misc.as_type
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.utils.misc.T
+
+
+.. py:data:: T
+
+   
+
+.. py:function:: as_type(x, t: type[T]) -> T
+
+

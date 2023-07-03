@@ -1,0 +1,39 @@
+:py:mod:`grapycal.sobjects.workspaceObject`
+===========================================
+
+.. py:module:: grapycal.sobjects.workspaceObject
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.sobjects.workspaceObject.WorkspaceObject
+
+
+
+
+.. py:class:: WorkspaceObject
+
+
+   Bases: :py:obj:`objectsync.SObject`
+
+   .. py:attribute:: frontend_type
+      :value: 'Workspace'
+
+      
+
+   .. py:method:: pre_build(attribute_values: Dict[str, Any] | None, **_)
+
+
+   .. py:method:: build()
+
+
+   .. py:method:: post_build()
+
+
+

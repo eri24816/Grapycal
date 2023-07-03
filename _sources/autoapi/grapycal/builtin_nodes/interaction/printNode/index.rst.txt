@@ -1,0 +1,55 @@
+:py:mod:`grapycal.builtin_nodes.interaction.printNode`
+======================================================
+
+.. py:module:: grapycal.builtin_nodes.interaction.printNode
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.builtin_nodes.interaction.printNode.PrintNode
+
+
+
+
+.. py:class:: PrintNode
+
+
+   Bases: :py:obj:`grapycal.sobjects.node.Node`
+
+   .. py:attribute:: category
+      :value: 'interaction'
+
+      
+
+   .. py:method:: pre_build(attribute_values, workspace, is_preview: bool = False)
+
+
+   .. py:method:: build()
+
+      Create child objects (typically ports and controls) here.
+      Notice: This method will not be called when the object is being restored. The child objects will be restored automatically instead of
+      running this method again.
+
+
+   .. py:method:: edge_activated(edge, port)
+
+      Called when an edge on an input port is activated.
+
+
+   .. py:method:: input_edge_added(edge: grapycal.sobjects.edge.Edge, port: grapycal.sobjects.port.InputPort)
+
+      Called when an edge is added to an input port.
+
+
+   .. py:method:: input_edge_removed(edge: grapycal.sobjects.edge.Edge, port: grapycal.sobjects.port.InputPort)
+
+      Called when an edge is removed from an input port.
+
+
+

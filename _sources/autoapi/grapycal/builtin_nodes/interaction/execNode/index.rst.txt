@@ -1,0 +1,53 @@
+:py:mod:`grapycal.builtin_nodes.interaction.execNode`
+=====================================================
+
+.. py:module:: grapycal.builtin_nodes.interaction.execNode
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.builtin_nodes.interaction.execNode.ExecNode
+
+
+
+
+.. py:class:: ExecNode
+
+
+   Bases: :py:obj:`grapycal.sobjects.node.Node`
+
+   .. py:attribute:: category
+      :value: 'interaction'
+
+      
+
+   .. py:method:: pre_build(attribute_values, workspace, is_preview: bool = False)
+
+
+   .. py:method:: build()
+
+      Create child objects (typically ports and controls) here.
+      Notice: This method will not be called when the object is being restored. The child objects will be restored automatically instead of
+      running this method again.
+
+
+   .. py:method:: activate()
+
+
+   .. py:method:: double_click()
+
+      Called when the node is double clicked by an user.
+
+
+   .. py:method:: output_edge_added(edge: grapycal.sobjects.edge.Edge, port: grapycal.sobjects.port.OutputPort)
+
+      Called when an edge is added to an output port.
+
+
+

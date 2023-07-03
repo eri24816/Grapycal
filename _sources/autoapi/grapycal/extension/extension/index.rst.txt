@@ -1,0 +1,23 @@
+:py:mod:`grapycal.extension.extension`
+======================================
+
+.. py:module:: grapycal.extension.extension
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.extension.extension.Extension
+
+
+
+
+.. py:class:: Extension(extension_name: str, existing_node_types: Dict[str, type[objectsync.SObject]])
+
+
+

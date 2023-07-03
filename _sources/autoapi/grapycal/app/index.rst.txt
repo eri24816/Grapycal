@@ -1,0 +1,38 @@
+:py:mod:`grapycal.app`
+======================
+
+.. py:module:: grapycal.app
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.app.GrapycalApp
+
+
+
+
+.. py:class:: GrapycalApp(config)
+
+
+   The backend server
+
+   :param usersettings.Settings config: the configuration for server
+
+   .. py:method:: run() -> None
+
+      Server main loop
+
+
+   .. py:method:: clean_unused_fetched_extensions()
+
+
+   .. py:method:: parse_extensions_from_workspace(workspace_path: str) -> list[str]
+
+
+

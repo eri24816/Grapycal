@@ -1,0 +1,51 @@
+:py:mod:`grapycal.sobjects.controls.imageControl`
+=================================================
+
+.. py:module:: grapycal.sobjects.controls.imageControl
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.sobjects.controls.imageControl.ImageControl
+
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.sobjects.controls.imageControl.smallest_jpg
+
+
+.. py:data:: smallest_jpg
+   :value: '/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDREND...'
+
+   
+
+.. py:class:: ImageControl
+
+
+   Bases: :py:obj:`grapycal.sobjects.controls.control.Control`
+
+       
+
+   .. py:attribute:: frontend_type
+      :value: 'ImageControl'
+
+      
+
+   .. py:method:: pre_build(attribute_values: Dict[str, Any] | None, **_)
+
+
+   .. py:method:: set_image(image: bytes | io.BytesIO)
+
+
+

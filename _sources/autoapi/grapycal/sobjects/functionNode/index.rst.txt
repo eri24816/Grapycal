@@ -1,0 +1,89 @@
+:py:mod:`grapycal.sobjects.functionNode`
+========================================
+
+.. py:module:: grapycal.sobjects.functionNode
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.sobjects.functionNode.FunctionNode
+
+
+
+
+.. py:class:: FunctionNode
+
+
+   Bases: :py:obj:`grapycal.sobjects.simpleNode.SimpleNode`
+
+   A subclass of `Node` that provides higher level inferface for defining nodes.
+
+   .. py:attribute:: inputs
+      :value: []
+
+      
+
+   .. py:attribute:: input_edge_limit
+      :value: []
+
+      
+
+   .. py:attribute:: outputs
+      :value: []
+
+      
+
+   .. py:method:: pre_build(attribute_values, workspace, is_preview: bool = False)
+
+
+   .. py:method:: build()
+
+      Create child objects (typically ports and controls) here.
+      Notice: This method will not be called when the object is being restored. The child objects will be restored automatically instead of
+      running this method again.
+
+
+   .. py:method:: edge_activated(edge: grapycal.sobjects.edge.Edge, port)
+
+      Called when an edge on an input port is activated.
+
+
+   .. py:method:: run()
+
+      Run a task. The stdout and errors will be redirected to the node's output attribute and be displayed in front-end.
+
+      Args:
+          - task: The task to run.
+
+          - background: If set to True, the task will be scheduled to run in the background thread. Otherwise, it will be run in the current thread immediately.
+          
+          - to_queue: Used only when background is True. If set to True, the task will be pushed to the :class:`.BackgroundRunner`'s queue.            If set to False, the task will be pushed to its stack. See :class:`.BackgroundRunner` for more details.
+
+
+   .. py:method:: calculate(data: list[Any])
+
+      Override this method to change the function of the node.
+
+
+   .. py:method:: input_edge_added(edge: grapycal.sobjects.edge.Edge, port)
+
+      Called when an edge is added to an input port.
+
+
+   .. py:method:: input_edge_removed(edge: grapycal.sobjects.edge.Edge, port)
+
+      Called when an edge is removed from an input port.
+
+
+   .. py:method:: output_edge_added(edge: grapycal.sobjects.edge.Edge, port)
+
+      Called when an edge is added to an output port.
+
+
+

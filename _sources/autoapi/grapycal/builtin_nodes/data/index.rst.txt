@@ -1,0 +1,264 @@
+:py:mod:`grapycal.builtin_nodes.data`
+=====================================
+
+.. py:module:: grapycal.builtin_nodes.data
+
+
+Package Contents
+----------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.builtin_nodes.data.TextControl
+   grapycal.builtin_nodes.data.Edge
+   grapycal.builtin_nodes.data.Node
+   grapycal.builtin_nodes.data.InputPort
+   grapycal.builtin_nodes.data.OutputPort
+   grapycal.builtin_nodes.data.VariableNode
+
+
+
+
+.. py:class:: TextControl
+
+
+   Bases: :py:obj:`grapycal.sobjects.controls.control.Control`
+
+   To add a text control to a node, use the following code in the node:
+   ```python
+   self.add_control(TextControl, text='', label='', editable=True)
+   ```
+
+   .. py:attribute:: frontend_type
+      :value: 'TextControl'
+
+      
+
+   .. py:method:: pre_build(attribute_values: Dict[str, Any] | None, text='', label='', editable=True, **_)
+
+
+
+.. py:class:: Edge
+
+
+   Bases: :py:obj:`objectsync.SObject`
+
+   .. py:attribute:: frontend_type
+      :value: 'Edge'
+
+      
+
+   .. py:method:: pre_build(attribute_values: dict[str, Any] | None, workspace, tail: grapycal.sobjects.port.OutputPort | None = None, head: grapycal.sobjects.port.InputPort | None = None)
+
+
+   .. py:method:: on_tail_set(old_tail: grapycal.sobjects.port.Port | None, new_tail: grapycal.sobjects.port.Port | None)
+
+
+   .. py:method:: on_head_set(old_head: grapycal.sobjects.port.Port | None, new_head: grapycal.sobjects.port.InputPort | None)
+
+
+   .. py:method:: destroy() -> objectsync.sobject.SObjectSerialized
+
+
+   .. py:method:: get_data() -> Any
+
+
+   .. py:method:: push_data(data)
+
+
+   .. py:method:: is_activated()
+
+
+   .. py:method:: is_data_ready()
+
+
+
+.. py:class:: Node
+
+
+   Bases: :py:obj:`objectsync.SObject`
+
+   .. py:attribute:: frontend_type
+      :value: 'Node'
+
+      
+
+   .. py:attribute:: category
+      :value: 'hidden'
+
+      
+
+   .. py:attribute:: T
+
+      
+
+   .. py:method:: pre_build(attribute_values: Dict[str, Any] | None, workspace: grapycal.core.workspace.Workspace, is_preview: bool = False)
+
+
+   .. py:method:: build()
+
+      Create child objects (typically ports and controls) here.
+      Notice: This method will not be called when the object is being restored. The child objects will be restored automatically instead of
+      running this method again.
+
+
+   .. py:method:: post_build()
+
+
+   .. py:method:: _spawn(client_id, translation)
+
+
+   .. py:method:: _on_parent_changed(old_parent_id, new_parent_id)
+
+
+   .. py:method:: destroy() -> objectsync.sobject.SObjectSerialized
+
+
+   .. py:method:: add_in_port(name, max_edges=64)
+
+      Add an input port to the node.
+
+
+   .. py:method:: add_out_port(name, max_edges=64)
+
+      Add an output port to the node.
+
+
+   .. py:method:: add_control(control_type: type[T], **kwargs) -> T
+
+      Add a control to the node.
+
+
+   .. py:method:: redirect_output()
+
+      Returns a context manager that redirects stdout to the node's output stream.
+
+
+   .. py:method:: run_in_background(task, to_queue=True)
+
+      Run a task in the background thread.
+
+
+   .. py:method:: run_directly(task)
+
+      Run a task in the current thread.
+
+
+   .. py:method:: run(task, background=True, to_queue=True)
+
+      Run a task. The stdout and errors will be redirected to the node's output attribute and be displayed in front-end.
+
+      Args:
+          - task: The task to run.
+
+          - background: If set to True, the task will be scheduled to run in the background thread. Otherwise, it will be run in the current thread immediately.
+          
+          - to_queue: Used only when background is True. If set to True, the task will be pushed to the :class:`.BackgroundRunner`'s queue.            If set to False, the task will be pushed to its stack. See :class:`.BackgroundRunner` for more details.
+
+
+   .. py:method:: _on_exception(e)
+
+
+   .. py:method:: edge_activated(edge: grapycal.sobjects.edge.Edge, port: grapycal.sobjects.port.InputPort)
+
+      Called when an edge on an input port is activated.
+
+
+   .. py:method:: input_edge_added(edge: grapycal.sobjects.edge.Edge, port: grapycal.sobjects.port.InputPort)
+
+      Called when an edge is added to an input port.
+
+
+   .. py:method:: input_edge_removed(edge: grapycal.sobjects.edge.Edge, port: grapycal.sobjects.port.InputPort)
+
+      Called when an edge is removed from an input port.
+
+
+   .. py:method:: output_edge_added(edge: grapycal.sobjects.edge.Edge, port: grapycal.sobjects.port.OutputPort)
+
+      Called when an edge is added to an output port.
+
+
+   .. py:method:: output_edge_removed(edge: grapycal.sobjects.edge.Edge, port: grapycal.sobjects.port.OutputPort)
+
+      Called when an edge is removed from an output port.
+
+
+   .. py:method:: double_click()
+
+      Called when the node is double clicked by an user.
+
+
+
+.. py:class:: InputPort
+
+
+   Bases: :py:obj:`Port`
+
+   .. py:method:: pre_build(attribute_values: dict[str, Any] | None, workspace, name='port', max_edges=64)
+
+
+   .. py:method:: add_edge(edge)
+
+
+   .. py:method:: remove_edge(edge)
+
+
+   .. py:method:: is_all_edge_ready()
+
+
+
+.. py:class:: OutputPort
+
+
+   Bases: :py:obj:`Port`
+
+   .. py:method:: pre_build(attribute_values: dict[str, Any] | None, workspace, name='port', max_edges=64)
+
+
+   .. py:method:: add_edge(edge)
+
+
+   .. py:method:: remove_edge(edge)
+
+
+
+.. py:class:: VariableNode
+
+
+   Bases: :py:obj:`grapycal.sobjects.node.Node`
+
+   .. py:attribute:: category
+      :value: 'data'
+
+      
+
+   .. py:method:: pre_build(attribute_values: Dict[str, Any] | None, workspace, is_preview: bool = False)
+
+
+   .. py:method:: build()
+
+      Create child objects (typically ports and controls) here.
+      Notice: This method will not be called when the object is being restored. The child objects will be restored automatically instead of
+      running this method again.
+
+
+   .. py:method:: edge_activated(edge: grapycal.sobjects.edge.Edge, port: grapycal.sobjects.port.InputPort)
+
+      Called when an edge on an input port is activated.
+
+
+   .. py:method:: double_click()
+
+      Called when the node is double clicked by an user.
+
+
+   .. py:method:: output_edge_added(edge: grapycal.sobjects.edge.Edge, port: grapycal.sobjects.port.OutputPort)
+
+      Called when an edge is added to an output port.
+
+
+

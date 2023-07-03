@@ -1,0 +1,182 @@
+:py:mod:`grapycal.builtin_nodes.function.math`
+==============================================
+
+.. py:module:: grapycal.builtin_nodes.function.math
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.builtin_nodes.function.math.AdditionNode
+   grapycal.builtin_nodes.function.math.SubtractionNode
+   grapycal.builtin_nodes.function.math.MultiplicationNode
+   grapycal.builtin_nodes.function.math.DivisionNode
+
+
+
+
+.. py:class:: AdditionNode
+
+
+   Bases: :py:obj:`grapycal.sobjects.functionNode.FunctionNode`
+
+   A subclass of `Node` that provides higher level inferface for defining nodes.
+
+   .. py:attribute:: category
+      :value: 'function/math'
+
+      
+
+   .. py:attribute:: inputs
+      :value: ['items']
+
+      
+
+   .. py:attribute:: input_edge_limit
+      :value: [None]
+
+      
+
+   .. py:attribute:: outputs
+      :value: ['sum']
+
+      
+
+   .. py:method:: build()
+
+      Create child objects (typically ports and controls) here.
+      Notice: This method will not be called when the object is being restored. The child objects will be restored automatically instead of
+      running this method again.
+
+
+   .. py:method:: calculate(data)
+
+      Override this method to change the function of the node.
+
+
+
+.. py:class:: SubtractionNode
+
+
+   Bases: :py:obj:`grapycal.sobjects.functionNode.FunctionNode`
+
+   A subclass of `Node` that provides higher level inferface for defining nodes.
+
+   .. py:attribute:: category
+      :value: 'function/math'
+
+      
+
+   .. py:attribute:: inputs
+      :value: ['a', 'b']
+
+      
+
+   .. py:attribute:: input_edge_limit
+      :value: [None, None]
+
+      
+
+   .. py:attribute:: outputs
+      :value: ['a-b']
+
+      
+
+   .. py:method:: build()
+
+      Create child objects (typically ports and controls) here.
+      Notice: This method will not be called when the object is being restored. The child objects will be restored automatically instead of
+      running this method again.
+
+
+   .. py:method:: calculate(data)
+
+      Override this method to change the function of the node.
+
+
+
+.. py:class:: MultiplicationNode
+
+
+   Bases: :py:obj:`grapycal.sobjects.functionNode.FunctionNode`
+
+   A subclass of `Node` that provides higher level inferface for defining nodes.
+
+   .. py:attribute:: category
+      :value: 'function/math'
+
+      
+
+   .. py:attribute:: inputs
+      :value: ['items']
+
+      
+
+   .. py:attribute:: input_edge_limit
+      :value: [None]
+
+      
+
+   .. py:attribute:: outputs
+      :value: ['product']
+
+      
+
+   .. py:method:: build()
+
+      Create child objects (typically ports and controls) here.
+      Notice: This method will not be called when the object is being restored. The child objects will be restored automatically instead of
+      running this method again.
+
+
+   .. py:method:: calculate(data)
+
+      Override this method to change the function of the node.
+
+
+
+.. py:class:: DivisionNode
+
+
+   Bases: :py:obj:`grapycal.sobjects.functionNode.FunctionNode`
+
+   A subclass of `Node` that provides higher level inferface for defining nodes.
+
+   .. py:attribute:: category
+      :value: 'function/math'
+
+      
+
+   .. py:attribute:: inputs
+      :value: ['a', 'b']
+
+      
+
+   .. py:attribute:: input_edge_limit
+      :value: [None, None]
+
+      
+
+   .. py:attribute:: outputs
+      :value: ['a/b']
+
+      
+
+   .. py:method:: build()
+
+      Create child objects (typically ports and controls) here.
+      Notice: This method will not be called when the object is being restored. The child objects will be restored automatically instead of
+      running this method again.
+
+
+   .. py:method:: calculate(data)
+
+      Override this method to change the function of the node.
+
+
+

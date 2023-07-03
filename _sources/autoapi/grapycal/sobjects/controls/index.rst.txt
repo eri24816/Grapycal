@@ -1,0 +1,90 @@
+:py:mod:`grapycal.sobjects.controls`
+====================================
+
+.. py:module:: grapycal.sobjects.controls
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   buttonControl/index.rst
+   control/index.rst
+   imageControl/index.rst
+   textControl/index.rst
+
+
+Package Contents
+----------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.sobjects.controls.TextControl
+   grapycal.sobjects.controls.ButtonControl
+   grapycal.sobjects.controls.ImageControl
+
+
+
+
+.. py:class:: TextControl
+
+
+   Bases: :py:obj:`grapycal.sobjects.controls.control.Control`
+
+   To add a text control to a node, use the following code in the node:
+   ```python
+   self.add_control(TextControl, text='', label='', editable=True)
+   ```
+
+   .. py:attribute:: frontend_type
+      :value: 'TextControl'
+
+      
+
+   .. py:method:: pre_build(attribute_values: Dict[str, Any] | None, text='', label='', editable=True, **_)
+
+
+
+.. py:class:: ButtonControl
+
+
+   Bases: :py:obj:`grapycal.sobjects.controls.control.Control`
+
+   To add a button control to a node, use the following code in the node:
+   ```python
+   self.add_control(Button, label='')
+   ```
+
+   .. py:attribute:: frontend_type
+      :value: 'ButtonControl'
+
+      
+
+   .. py:method:: pre_build(attribute_values: Dict[str, Any] | None, label='', **_)
+
+
+
+.. py:class:: ImageControl
+
+
+   Bases: :py:obj:`grapycal.sobjects.controls.control.Control`
+
+       
+
+   .. py:attribute:: frontend_type
+      :value: 'ImageControl'
+
+      
+
+   .. py:method:: pre_build(attribute_values: Dict[str, Any] | None, **_)
+
+
+   .. py:method:: set_image(image: bytes | io.BytesIO)
+
+
+

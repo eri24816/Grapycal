@@ -1,0 +1,74 @@
+:py:mod:`grapycal.sobjects.port`
+================================
+
+.. py:module:: grapycal.sobjects.port
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   grapycal.sobjects.port.Port
+   grapycal.sobjects.port.InputPort
+   grapycal.sobjects.port.OutputPort
+
+
+
+
+.. py:class:: Port
+
+
+   Bases: :py:obj:`objectsync.SObject`
+
+   .. py:attribute:: frontend_type
+      :value: 'Port'
+
+      
+
+   .. py:method:: pre_build(attribute_values: dict[str, Any] | None, workspace, name='port', max_edges=64)
+
+
+   .. py:method:: add_edge(edge)
+
+
+   .. py:method:: remove_edge(edge)
+
+
+
+.. py:class:: InputPort
+
+
+   Bases: :py:obj:`Port`
+
+   .. py:method:: pre_build(attribute_values: dict[str, Any] | None, workspace, name='port', max_edges=64)
+
+
+   .. py:method:: add_edge(edge)
+
+
+   .. py:method:: remove_edge(edge)
+
+
+   .. py:method:: is_all_edge_ready()
+
+
+
+.. py:class:: OutputPort
+
+
+   Bases: :py:obj:`Port`
+
+   .. py:method:: pre_build(attribute_values: dict[str, Any] | None, workspace, name='port', max_edges=64)
+
+
+   .. py:method:: add_edge(edge)
+
+
+   .. py:method:: remove_edge(edge)
+
+
+
